@@ -1,20 +1,32 @@
 {
   "name": "@pipeworx/mcp-phone",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Phone number validation MCP.",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
+  "bin": {
+    "mcp-phone": "bin/cli.js"
+  },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "phone"],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pipeworx-io/mcp-phone"
+    "url": "git+https://github.com/pipeworx-io/mcp-phone.git"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
   "devDependencies": {
-    "typescript": "^5.7.0"
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-090f207dedee7ef9508567f08d0d8eb251c1d070e49994dc4220999d0bfdd47b",
+    "sourceCommit": "00c836ddeaecbdd581dcfb0fb1842efea104006e"
   }
 }
