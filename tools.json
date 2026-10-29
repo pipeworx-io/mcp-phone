@@ -1,0 +1,35 @@
+[
+  {
+    "name": "validate_phone",
+    "description": "Validate & parse a phone number against the E.164 / ITU calling-code plan (keyless, offline). Detects the country, normalizes to E.164, and checks the national-number length is plausible. Pass an international number (e.g. \"+33 1 23 45 67 89\") OR a national number plus a `country` ISO code (e.g. phone=\"020 7946 0958\", country=\"GB\"). Does NOT determine carrier or mobile-vs-landline (that needs a keyed HLR lookup).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "phone": {
+          "type": "string",
+          "description": "The phone number to validate (international \"+..\" form, or national form with `country`)."
+        },
+        "country": {
+          "type": "string",
+          "description": "Optional ISO 3166 alpha-2 country code (e.g. \"US\", \"GB\", \"DE\") used when `phone` is in national (non-+) form."
+        }
+      },
+      "required": [
+        "phone"
+      ]
+    }
+  },
+  {
+    "name": "country_calling_codes",
+    "description": "Look up international calling (dialing) codes. With no args, lists all. Pass `query` to filter by country name, ISO code, or calling code (e.g. \"germany\", \"DE\", \"49\").",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Country name, ISO alpha-2 code, or calling code to search for."
+        }
+      }
+    }
+  }
+]
